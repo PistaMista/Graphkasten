@@ -44,15 +44,23 @@ The graph view is \emph{the basis} of the system and so will always be shown. Th
 
 	\begin{umlsystem}[x=4]{Zettelkasten GTK}
 		\umlusecase[y=1]{Search notes}
-		\umlusecase[x=8,y=1]{Show result in graph}
+		\umlusecase[x=4]{Show result in graph}
 
-		\umlusecase{Show neighboring notes}
+		\umlusecase[y=-1]{Show neighboring notes}
+
+		\umlusecase[y=-3]{Show HTML preview}
+		\umlusecase[y=-4,x=4]{Highlight hovered link}
+
+		\umlusecase[y=-2]{Open note in Neovim}
 	\end{umlsystem}
 
 	\umlextend{usecase-2}{usecase-1}
+	\umlinclude{usecase-5}{usecase-4}
 
 	\umlassoc{User}{usecase-1}
 	\umlassoc{User}{usecase-3}
+	\umlassoc{User}{usecase-4}
+	\umlassoc{User}{usecase-6}
 \end{tikzpicture}
 \end{center}
 
