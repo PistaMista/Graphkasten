@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[T1]{fontenc}
 \usepackage[unicode]{hyperref}
+\usepackage{tikzuml/tikz-uml}
 
 \title{Zettelkasten GTK}
 \author{Kryštof Albrecht \\ \href{mailto:krystofalbrechtus@gmail.com}{krystofalbrechtus@gmail.com}}
@@ -8,5 +9,53 @@
 \begin{document}
 \maketitle
 \tableofcontents
+
+\newpage
+
+\section{Introduction}
+
+\subsection{Motivation}
+
+Tools like Vimwiki, Vimzettel and Taskwiki provide a solid base for a Zettelkasten workflow. These are however based on \emph{the Vim text editor}, which has a lot of advantages:
+
+\begin{itemize}
+	\item Text editing cannot be faster
+	
+	\item Adding new notes is effortless
+
+	\item The system is simple
+
+	\item Tasks can have note links in them
+
+	\item Any missing functionality can be added through Vimscript
+\end{itemize}
+
+The problem is however, that there is no GUI. Tools like \emph{Obsidian} offer a \emph{graph view} that enables natural viewing of the \emph{networked structure} of the Zettelkasten. This view allows faster and easier search and navigation, but also improves the chances of \emph{emergent ideas.}
+
+This tool is based on a \emph{graph view} of the Zettelkasten and allows a wide range of filters to find precisely what we're looking for.
+
+\subsection{Use cases}
+
+The graph view is \emph{the basis} of the system and so will always be shown. The user will then be able to \emph{adjust} this graph view.
+
+\begin{center}
+\begin{tikzpicture}
+	\umlactor{User}
+
+	\begin{umlsystem}[x=4]{Zettelkasten GTK}
+		\umlusecase[y=1]{Search notes}
+		\umlusecase[x=8,y=1]{Show result in graph}
+
+		\umlusecase{Show neighboring notes}
+	\end{umlsystem}
+
+	\umlextend{usecase-2}{usecase-1}
+
+	\umlassoc{User}{usecase-1}
+	\umlassoc{User}{usecase-3}
+\end{tikzpicture}
+\end{center}
+
+\subsection{Other features}
 
 \end{document}
