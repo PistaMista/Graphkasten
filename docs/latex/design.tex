@@ -9,6 +9,13 @@
 \usetikzlibrary{scopes}
 \usetikzlibrary{calc}
 
+\tikzset{note/.style={circle,draw=black,fill=orange,thick,minimum size=2em},
+	selected/.style={circle,thick,draw=blue,minimum size=2.7em},
+	link/.style={draw=black},
+	arrow/.style={->,draw=blue,thick},
+	arrow_letter/.style={blue},
+	outline/.style={draw=red,thick}}
+
 \title{Zettelkasten GTK}
 \author{Kryštof Albrecht \\ \href{mailto:krystofalbrechtus@gmail.com}{krystofalbrechtus@gmail.com}}
 
@@ -131,11 +138,9 @@ I can't seem to remember something that I've written down.
 This section provides an overview of the various \emph{elements} of the graph view. 
 
 \begin{center}
-\begin{tikzpicture}
-	[note/.style={circle,draw=black,fill=orange,thick,minimum size=2em},
-	link/.style={draw=black},
-	outline/.style={draw=red,thick}]
 
+
+\begin{tikzpicture}
 	% Draw the graph nodes
 	\draw node at (0,0) [note](node1){1} 
 		node at (1,-1) [note](node2){2}
@@ -146,7 +151,7 @@ This section provides an overview of the various \emph{elements} of the graph vi
 		node at (4,4) [note](node7){7}
 		node at (2,5) [note](node8){8}
 		node at (3,3) [note](node9){9};
-	
+
 	% Draw the links between the graph nodes
 	\draw[link] (node1) --(node2)
 	            (node1) --(node3)
@@ -155,14 +160,19 @@ This section provides an overview of the various \emph{elements} of the graph vi
 	            (node2) --(node3)
 	            (node2) --(node6)
 			(node2) -- node[right]{\emph{link (\ref{gelement:links})}}(node9)
-			(node3) --(node4)
 			(node3) --(node7)
-			(node3) --(node9)
-			(node4) --(node5)
-			(node4) --(node7)
-			(node4) --(node8);
+			(node3) --(node9);
+	
+		% Draw a circle around the selected node
+		\draw node at (node4) [selected](selected_node){};
 
-		\draw node at ($(node9) + (1.7,0)$){\emph{note node (\ref{gelement:notes})}};
+		% Draw arrows to nodes selectable by pressing the shown key
+		\draw[arrow] (selected_node) -- node[above,arrow_letter] {j} (node3);
+		\draw[arrow] (selected_node) -- node[right,arrow_letter] {h} (node5);
+		\draw[arrow] (selected_node) -- node[below,arrow_letter] {l} (node7);
+		\draw[arrow] (selected_node) -- node[above,arrow_letter] {k} (node8);
+
+	\draw node at ($(node9) + (1.7,0)$){\emph{note node (\ref{gelement:notes})}};
 
 	% Draw outline
 		\draw[outline,fill=red,fill opacity=0.1] ($(node5) + (0,0.5)$) .. controls($(node1) + (0.5,1)$) and ($(node1) + (1,0.5)$) .. ($(node2) + (0.5,0)$)
