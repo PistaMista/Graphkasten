@@ -133,7 +133,8 @@ This section provides an overview of the various \emph{elements} of the graph vi
 \begin{center}
 \begin{tikzpicture}
 	[note/.style={circle,draw=black,fill=orange,thick,minimum size=2em},
-	link/.style={draw=black,thick}]
+	link/.style={draw=black},
+	outline/.style={draw=red,thick}]
 
 	% Draw the graph nodes
 	\draw node at (0,0) [note](node1){1} 
@@ -162,6 +163,15 @@ This section provides an overview of the various \emph{elements} of the graph vi
 			(node4) --(node8);
 
 		\draw node at ($(node9) + (1.7,0)$){\emph{note node (\ref{gelement:notes})}};
+
+	% Draw outline
+		\draw[outline,fill=red,fill opacity=0.1] ($(node5) + (0,0.5)$) .. controls($(node1) + (0.5,1)$) and ($(node1) + (1,0.5)$) .. ($(node2) + (0.5,0)$)
+
+			node[right,red,fill opacity=1]{\emph{outline (\ref{gelement:outlines})}}
+
+			.. controls($(node2) + (0.8,-1)$) and ($(node6) + (-0.6,-1)$) .. ($(node6) - (0.5,0)$)
+
+			.. controls($(node6) + (135:0.7)$) and ($(node5) + (140:1)$) .. ($(node5) + (0,0.5)$);
 \end{tikzpicture}
 \end{center}
 
