@@ -6,6 +6,8 @@
 \usepackage{graphicx}
 
 \usetikzlibrary{positioning}
+\usetikzlibrary{scopes}
+\usetikzlibrary{calc}
 
 \title{Zettelkasten GTK}
 \author{Kryštof Albrecht \\ \href{mailto:krystofalbrechtus@gmail.com}{krystofalbrechtus@gmail.com}}
@@ -44,9 +46,9 @@ This tool is based on a \emph{graph view} of the Zettelkasten and allows a wide 
 
 \newpage
 
-\subsection{Use case diagram}
+\subsection{Use case diagram}\label{sec:use_case_diagram}
 
-The graph view (see section \ref{graph_view}) is \emph{the basis} of the system and so will always be shown. The user will then be able to \emph{adjust} this graph view. Any other view will open as a sidebar.
+The graph view (see section \ref{sec:graph_view}) is \emph{the basis} of the system and so will always be shown. The user will then be able to \emph{adjust} this graph view. Any other view will open as a sidebar.
 
 \begin{center}
 \begin{tikzpicture}
@@ -62,7 +64,7 @@ The graph view (see section \ref{graph_view}) is \emph{the basis} of the system 
 		\umlusecase[y=-4,x=4]{Highlight hovered link}
 
 		\umlusecase[y=-2]{Open note in Neovim}
-		\umlusecase[y=-5]{Open calendar/timeline}
+		\umlusecase[y=-5,fill=white]{Open calendar/timeline (v2)}
 	\end{umlsystem}
 
 	\umlextend{usecase-2}{usecase-1}
@@ -95,11 +97,11 @@ Here are a few scenarios of how using the application might play out.
 I've taken some notes and put them in the staging area. Now I want to quickly integrate them into the Zettelkasten.
 
 \begin{enumerate}
-	\item The staged notes have an \emph{outline} around them. Each staging subtask is \emph{further divided} by outlines.
+	\item The staged notes have an \emph{outline} around them in the graph view. Each staging subtask is \emph{further divided} by outlines.
 
 	\item I \emph{highlight} all the task notes within an outline.
 
-	\item I \emph{open} all the notes at once in Neovim.
+	\item I \emph{open} all the notes at once in Neovim with a single click.
 
 	\item I can view the HTML preview of the note I am working on.
 
@@ -122,6 +124,53 @@ I can't seem to remember something that I've written down.
 	\item Hitting enter again, I can navigate the HTML preview.
 \end{enumerate}
 
-\section{The Graph View}\label{graph_view}
+\newpage
+
+\section{The Graph View}\label{sec:graph_view}
+
+This section provides an overview of the various \emph{elements} of the graph view. 
+
+\begin{center}
+\begin{tikzpicture}
+	[note/.style={circle,draw=black,fill=orange,thick,minimum size=2em},
+	link/.style={draw=black,thick}]
+
+	% Draw the graph nodes
+	\draw node at (0,0) [note](node1){1} 
+		node at (1,-1) [note](node2){2}
+		node at (1.7,3) [note](node3){3}
+		node at (-1.2,5) [note](node4){4}
+		node at (-1.6,1) [note](node5){5}
+		node at (-2,-1) [note](node6){6}
+		node at (4,4) [note](node7){7}
+		node at (2,5) [note](node8){8}
+		node at (3,3) [note](node9){9};
+	
+	% Draw the links between the graph nodes
+	\draw[link] (node1) --(node2)
+	            (node1) --(node3)
+	            (node1) --(node5)
+	            (node1) --(node6)
+	            (node2) --(node3)
+	            (node2) --(node6)
+			(node2) -- node[right]{\emph{link (\ref{gelement:links})}}(node9)
+			(node3) --(node4)
+			(node3) --(node7)
+			(node3) --(node9)
+			(node4) --(node5)
+			(node4) --(node7)
+			(node4) --(node8);
+
+		\draw node at ($(node9) + (1.7,0)$){\emph{note node (\ref{gelement:notes})}};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Notes}\label{gelement:notes}
+
+\subsection{Links}\label{gelement:links}
+
+\subsection{Outlines}\label{gelement:outlines}
+
+\subsection{Lenses}\label{gelement:lenses}
 
 \end{document}
