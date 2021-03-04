@@ -2,6 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[unicode]{hyperref}
 \usepackage{tikzuml/tikz-uml}
+\usepackage{graphicx}
 
 \title{Zettelkasten GTK}
 \author{Kryštof Albrecht \\ \href{mailto:krystofalbrechtus@gmail.com}{krystofalbrechtus@gmail.com}}
@@ -16,7 +17,7 @@
 
 \subsection{Motivation}
 
-Tools like Vimwiki, Vimzettel and Taskwiki provide a solid base for a Zettelkasten workflow. These are however based on \emph{the Vim text editor}, which has a lot of advantages:
+Tools like Vimwiki, Vimzettel and Taskwiki provide a solid base for a Zettelkasten workflow. These are based on \emph{the Vim text editor}, which has a lot of advantages:
 
 \begin{itemize}
 	\item Text editing cannot be faster
@@ -34,9 +35,15 @@ The problem is however, that there is no GUI. Tools like \emph{Obsidian} offer a
 
 This tool is based on a \emph{graph view} of the Zettelkasten and allows a wide range of filters to find precisely what we're looking for.
 
-\subsection{Use cases}
+\begin{center}
+\includegraphics[width=\linewidth/2]{fig/wisdom.png}
+\end{center}
 
-The graph view is \emph{the basis} of the system and so will always be shown. The user will then be able to \emph{adjust} this graph view.
+\newpage
+
+\subsection{Use case diagram}
+
+The graph view (see section \ref{graph_view}) is \emph{the basis} of the system and so will always be shown. The user will then be able to \emph{adjust} this graph view. Any other view will open as a sidebar.
 
 \begin{center}
 \begin{tikzpicture}
@@ -52,6 +59,7 @@ The graph view is \emph{the basis} of the system and so will always be shown. Th
 		\umlusecase[y=-4,x=4]{Highlight hovered link}
 
 		\umlusecase[y=-2]{Open note in Neovim}
+		\umlusecase[y=-5]{Open calendar/timeline}
 	\end{umlsystem}
 
 	\umlextend{usecase-2}{usecase-1}
@@ -61,9 +69,56 @@ The graph view is \emph{the basis} of the system and so will always be shown. Th
 	\umlassoc{User}{usecase-3}
 	\umlassoc{User}{usecase-4}
 	\umlassoc{User}{usecase-6}
+	\umlassoc{User}{usecase-7}
 \end{tikzpicture}
 \end{center}
 
-\subsection{Other features}
+\subsection{Miscellaneous features}
+
+Apart from the aforementioned main use cases, there will also be the following features:
+
+\begin{itemize}
+	\item Showing files/attachments in the graph view
+
+	\item Support for Vimwiki tags
+\end{itemize}
+
+\subsection{Common scenarios}
+
+Here are described how some scenarios using the application might play out.
+
+\subsubsection{Processing the staging area}
+
+I've taken some notes and put them in the staging area. Now I want to quickly integrate them into the Zettelkasten.
+
+\begin{enumerate}
+	\item The staged notes have an \emph{outline} around them. Each staging subtask is \emph{further divided} by outlines.
+
+	\item I \emph{highlight} all the task notes within an outline.
+
+	\item I \emph{open} all the notes at once in Neovim.
+
+	\item I can view the HTML preview of the note I am working on.
+
+	\item As I work, the graph updates \emph{in real time}.
+\end{enumerate}
+
+\subsubsection{Searching for information}
+
+I can't seem to remember something that I've written down.
+
+\begin{enumerate}
+	\item I enter my search query by \emph{just starting to type.}
+
+	\item The graph updates in real time and shows just the nodes matching the query. The most relevant node is highlighted and its HTML preview is show automatically.
+
+	\item I have the option to show a small snippet of the note next to each node.
+
+	\item Hitting enter, I can navigate the nodes with \emph{Vim keys}.
+
+	\item Hitting enter again, I can navigate the HTML preview.
+\end{enumerate}
+
+\section{The Graph View}\label{graph_view}
 
 \end{document}
