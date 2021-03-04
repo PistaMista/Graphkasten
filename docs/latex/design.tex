@@ -1,8 +1,11 @@
 \documentclass{article}
 \usepackage[T1]{fontenc}
 \usepackage[unicode]{hyperref}
+\usepackage{tikz}
 \usepackage{tikzuml/tikz-uml}
 \usepackage{graphicx}
+
+\usetikzlibrary{positioning}
 
 \title{Zettelkasten GTK}
 \author{Kryštof Albrecht \\ \href{mailto:krystofalbrechtus@gmail.com}{krystofalbrechtus@gmail.com}}
@@ -63,7 +66,7 @@ The graph view (see section \ref{graph_view}) is \emph{the basis} of the system 
 	\end{umlsystem}
 
 	\umlextend{usecase-2}{usecase-1}
-	\umlinclude{usecase-5}{usecase-4}
+	\umlinclude{usecase-4}{usecase-5}
 
 	\umlassoc{User}{usecase-1}
 	\umlassoc{User}{usecase-3}
@@ -85,7 +88,7 @@ Apart from the aforementioned main use cases, there will also be the following f
 
 \subsection{Common scenarios}
 
-Here are described how some scenarios using the application might play out.
+Here are a few scenarios of how using the application might play out.
 
 \subsubsection{Processing the staging area}
 
