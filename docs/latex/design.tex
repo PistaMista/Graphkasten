@@ -27,6 +27,8 @@
 
 \section{Introduction}
 
+Zettelkasten GTK provides a \emph{graph view} of the notes, \emph{keyboard-driven navigation} and \emph{flexible search} to refine interaction with the Zettelkasten.
+
 \subsection{Motivation}
 
 Tools like Vimwiki, Vimzettel and Taskwiki provide a solid base for a Zettelkasten workflow. These are based on \emph{the Vim text editor}, which has a lot of advantages:
@@ -45,7 +47,6 @@ Tools like Vimwiki, Vimzettel and Taskwiki provide a solid base for a Zettelkast
 
 The problem is however, that there is no GUI. Tools like \emph{Obsidian} offer a \emph{graph view} that enables natural viewing of the \emph{networked structure} of the Zettelkasten. This view allows faster and easier search and navigation, but also improves the chances of \emph{emergent ideas.}
 
-This tool is based on a \emph{graph view} of the Zettelkasten and allows a wide range of filters to find precisely what we're looking for.
 
 \begin{center}
 \includegraphics[width=\linewidth/2]{fig/wisdom.png}
@@ -55,7 +56,7 @@ This tool is based on a \emph{graph view} of the Zettelkasten and allows a wide 
 
 \subsection{Use case diagram}\label{sec:use_case_diagram}
 
-The graph view (see section \ref{sec:graph_view}) is \emph{the basis} of the system and so will always be shown. The user will then be able to \emph{adjust} this graph view. Any other view will open as a sidebar.
+The note graph (see section \ref{sec:graph_view}) is \emph{the basis} of the system and so will always be shown. The user will then be able to \emph{adjust} this graph view. Any other view will open as a sidebar.
 
 \begin{center}
 \begin{tikzpicture}
@@ -65,7 +66,7 @@ The graph view (see section \ref{sec:graph_view}) is \emph{the basis} of the sys
 		\umlusecase[y=1]{Search notes (\ref{gelement:notes})}
 		\umlusecase[x=4]{Show result in graph (\ref{gelement:lenses})}
 
-		\umlusecase[y=-1]{Show neighboring notes}
+		\umlusecase[y=-1]{Show close notes}
 
 		\umlusecase[y=-3]{Show HTML preview}
 		\umlusecase[y=-4,x=4]{Highlight hovered link}
@@ -95,6 +96,8 @@ Apart from the aforementioned main use cases, there will also be the following f
 	\item Showing files/attachments in the graph view
 
 	\item Support for Vimwiki tags
+
+	\item Fast search
 \end{itemize}
 
 \subsection{Common scenarios} % TODO Add pictures to scenarios
