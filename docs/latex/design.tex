@@ -59,11 +59,11 @@ The graph view (see section \ref{sec:graph_view}) is \emph{the basis} of the sys
 
 \begin{center}
 \begin{tikzpicture}
-	\umlactor{User}
+	\umlactor[y=-2]{User}
 
 	\begin{umlsystem}[x=4]{Zettelkasten GTK}
-		\umlusecase[y=1]{Search notes}
-		\umlusecase[x=4]{Show result in graph}
+		\umlusecase[y=1]{Search notes (\ref{gelement:notes})}
+		\umlusecase[x=4]{Show result in graph (\ref{gelement:lenses})}
 
 		\umlusecase[y=-1]{Show neighboring notes}
 
@@ -71,7 +71,8 @@ The graph view (see section \ref{sec:graph_view}) is \emph{the basis} of the sys
 		\umlusecase[y=-4,x=4]{Highlight hovered link}
 
 		\umlusecase[y=-2]{Open note in Neovim}
-		\umlusecase[y=-5,fill=white]{Open calendar/timeline (v2)}
+		\umlusecase[y=-5,x=1]{Select notes within outline (\ref{gelement:outlines})}
+		\umlusecase[y=-6,x=1,fill=white]{Open calendar/timeline (v2)}
 	\end{umlsystem}
 
 	\umlextend{usecase-2}{usecase-1}
@@ -82,6 +83,7 @@ The graph view (see section \ref{sec:graph_view}) is \emph{the basis} of the sys
 	\umlassoc{User}{usecase-4}
 	\umlassoc{User}{usecase-6}
 	\umlassoc{User}{usecase-7}
+	\umlassoc{User}{usecase-8}
 \end{tikzpicture}
 \end{center}
 
@@ -95,7 +97,7 @@ Apart from the aforementioned main use cases, there will also be the following f
 	\item Support for Vimwiki tags
 \end{itemize}
 
-\subsection{Common scenarios}
+\subsection{Common scenarios} % TODO Add pictures to scenarios
 
 Here are a few scenarios of how using the application might play out.
 
