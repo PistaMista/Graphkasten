@@ -8,6 +8,8 @@
 \usepackage{tikz}
 \usepackage{tikzuml/tikz-uml}
 \usepackage{graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 
 \usetikzlibrary{positioning}
 \usetikzlibrary{fit}
@@ -151,7 +153,9 @@ I need to query some information in the Zettelkasten.
 
 \newpage
 
-\section{UI Layout}\label{sec:ui_layout}
+\section{Architecture}
+
+\subsection{UI Overview}\label{sec:ui_layout}
 
 The note graph is \emph{the basis} of the system and so will always be shown. The user will then be able to \emph{adjust} this graph view. Any other view will open as a sidebar.
 
@@ -196,7 +200,7 @@ The note graph is \emph{the basis} of the system and so will always be shown. Th
 
 \newpage
 
-\section{Graph View}\label{sec:graph_view}
+\subsection{Graph View}\label{sec:graph_view}
 
 This section provides an overview of the various \emph{elements} of the graph view. 
 
@@ -248,24 +252,24 @@ This section provides an overview of the various \emph{elements} of the graph vi
 \end{tikzpicture}
 \end{center}
 
-\subsection{Notes}\label{gelement:notes}
+\subsubsection{Notes}\label{gelement:notes}
 
-\subsection{Links}\label{gelement:links}
+\subsubsection{Links}\label{gelement:links}
 
-\subsection{Outlines}\label{gelement:outlines}
+\subsubsection{Outlines}\label{gelement:outlines}
 
-\subsection{Lenses}\label{gelement:lenses}
-
-\newpage
-
-\section{Search}\label{sec:search}
+\subsubsection{Lenses}\label{gelement:lenses}
 
 \newpage
 
-\section{HTML Preview}\label{sec:html_preview}
+\subsection{Search}\label{sec:search}
 
 \newpage
 
-\section{Options}\label{sec:options}
+\subsection{HTML Preview}\label{sec:html_preview}
+
+\newpage
+
+\subsection{Options}\label{sec:options}
 
 \end{document}
