@@ -170,7 +170,7 @@ The note graph is \emph{the basis} of the system and so will always be shown. Th
 \newcommand{\uielement}[5]{
 	\uicontainer{#1}{#2}{#4}
 
-	\node[fit={(#4.north west) (#4.south east)}, draw=#3, fill=#3, fill opacity=0.2, thick, inner sep=-0.3]{};
+	\node[fit={(#4.north west) (#4.south east)}, draw=#3, fill=#3, fill opacity=0.05, thick, inner sep=-0.3]{};
 	\node[text=#3] at (#4){#5};
 }
 
@@ -192,19 +192,19 @@ The note graph is \emph{the basis} of the system and so will always be shown. Th
 
 	%% Hamburger menu (attached to the searchbar)
 	\path let \p1=( $(searchbar.south east) - (searchbar.north east)$ ) in coordinate (ham_end) at (-\y1, \y1);
-	\uielement{(searchbar.north east)}{($(searchbar.north east) + (ham_end)$)}{gray}{hamburger}{\hyperref[sec:options]{H}}
+	\uielement{(searchbar.north east)}{($(searchbar.north east) + (ham_end)$)}{magenta}{hamburger}{\hyperref[sec:options]{H}}
 
 \end{tikzpicture}
 
 \end{center}
 
-The \emph{graph view} is the most important part of the UI. It visualizes stored ideas and the connections between them and allows navigating related ideas easily.
+The \textcolor{blue}{\emph{graph view}} is the most important part of the UI. It visualizes stored ideas and the connections between them and allows navigating related ideas easily.
 
-The \emph{searchbar} allows filtering what is shown in the graph view. Nodes matching the search will be shown and the view will zoom in to fit the results. Other nodes will be hidden.
+The \textcolor{red}{\emph{HTML preview}} shows the currently selected note in HTML format. Search results are also highlighted on the page. Clicking links to other nodes on the page selects that node in the graph.
 
-The \emph{HTML preview} shows the currently selected note in HTML format. Search results are also highlighted on the page. Clicking links to other nodes on the page selects that node in the graph.
+The \textcolor{orange}{\emph{searchbar}} allows filtering what is shown in the graph view. Nodes matching the search will be shown and the view will zoom in to fit the results. Other nodes will be hidden.
 
-The \emph{hamburger menu} shows configuration options.
+The \textcolor{magenta}{\emph{hamburger menu}} (attached to the searchbar) shows configuration options.
 
 \newpage
 
