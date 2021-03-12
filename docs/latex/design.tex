@@ -208,6 +208,30 @@ The \emph{hamburger menu} shows configuration options.
 
 \newpage
 
+\subsection{System states}
+
+This section describes the states the system can get into through user interaction. The application can be controlled using the mouse, but also allows for full keyboard control.
+
+\begin{center}
+\begin{tikzpicture}
+	\umlstateinitial[name=initial]
+	\umlbasicstate[name=searching, below=2cm of initial, do=accept search query, exit=select most relevant node]{Searching}
+	\umlbasicstate[name=navigating, below=4cm of searching, entry=highlight selected node, do=select relative nodes using Vim keys, exit=unhighlight selected node]{Navigating graph}
+	\umlbasicstate[name=previewing, below=4cm of navigating, entry=focus preview panel, do=scroll preview using Vim keys, exit=unfocus preview panel]{Viewing HTML Preview}
+
+	\umltrans{initial}{searching}
+	\umltrans[arg=search query confirmed (ENTER)]{searching}{navigating}
+	\umltrans[arg=ENTER pressed/selected node clicked]{navigating}{previewing}
+
+	\umlHVHtrans[arm1=-4cm,arg=ESC pressed,pos=2]{previewing}{navigating}
+	\umlHVHtrans[arm1=5cm,arg=ESC pressed,pos=2.5]{navigating}{searching}
+
+\end{tikzpicture}
+\end{center}
+
+
+\newpage
+
 \subsection{Graph View}\label{sec:graph_view}
 
 This section provides an overview of the various \emph{elements} of the graph view. 
@@ -279,5 +303,7 @@ This section provides an overview of the various \emph{elements} of the graph vi
 \newpage
 
 \subsection{Options}\label{sec:options}
+
+\newpage
 
 \end{document}
