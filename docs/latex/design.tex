@@ -208,19 +208,20 @@ The \textcolor{magenta}{\emph{hamburger menu}} (attached to the searchbar) shows
 
 \newpage
 
-\subsection{System states}
+\subsection{System states} % TODO Incorporate note outlines
 
 This section describes the states the system can get into through user interaction. The application can be controlled using the mouse, but also allows for full keyboard control.
 
 \begin{center}
 \begin{tikzpicture}
 	\umlstateinitial[name=initial]
-	\umlbasicstate[name=searching, below=2cm of initial, do=accept search query, exit=select most relevant node]{Searching}
+	\umlbasicstate[name=searching, below=3cm of initial, entry=update graph and preview, do=accept search query, exit=select most relevant node]{Typing search query}
 	\umlbasicstate[name=navigating, below=4cm of searching, entry=highlight selected node, do=select relative nodes using Vim keys, exit=unhighlight selected node]{Navigating graph}
 	\umlbasicstate[name=previewing, below=4cm of navigating, entry=focus preview panel, do=scroll preview using Vim keys, exit=unfocus preview panel]{Viewing HTML Preview}
 
 	\umltrans{initial}{searching}
-	\umltrans[arg=search query confirmed (ENTER)]{searching}{navigating}
+	\umltrans[recursive=-170|-110|3cm, recursive direction=left to bottom, arg=character typed, pos=2.5]{searching}{searching}
+	\umltrans[arg=ENTER pressed]{searching}{navigating}
 	\umltrans[arg=ENTER pressed/selected node clicked]{navigating}{previewing}
 
 	\umlHVHtrans[arm1=-4cm,arg=ESC pressed,pos=2]{previewing}{navigating}
