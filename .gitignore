@@ -318,3 +318,6 @@ TSWLatexianTemp*
 
 # xwatermark package
 *.xwm
+
+# TikzUML package
+docs/latex/tikzuml
