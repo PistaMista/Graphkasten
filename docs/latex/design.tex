@@ -3,6 +3,7 @@
 \usepackage{silence}
 \WarningFilter{latex}{You have requested package}
 
+\usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[unicode,hidelinks]{hyperref}
 \usepackage[margin=10em]{geometry}
@@ -123,7 +124,7 @@ Here are a few scenarios of how using the application might play out.
 I've taken some notes and put them into the Staging Area. Now I want to quickly integrate them into the Zettelkasten.
 
 \begin{enumerate}
-	\item The staged notes have an \emph{outline} around them in the graph view. Each staging subtask is \emph{further divided} by outlines.
+	\item The staged notes (staging tasks) have an \emph{outline} around them in the graph view. The \emph{subtasks} of each staging task are also outlined.
 
 	\item I \emph{highlight} all the task notes within an outline.
 
@@ -220,7 +221,7 @@ This section describes the states the system can get into through user interacti
 	\umlbasicstate[name=navigating, below=4cm of searching, entry=highlight selected node, do=select relative nodes using Vim keys, exit=unhighlight selected node]{Navigating graph}
 	\umlbasicstate[name=previewing, below=4cm of navigating, entry=focus preview panel, do=scroll preview using Vim keys, exit=unfocus preview panel]{Viewing HTML Preview}
 
-	\umltrans{initial}{searching}
+	\umltrans[arg=/select Index node and open HTML preview,pos=0.5]{initial}{searching}
 	\umltrans[recursive=-170|-110|3cm, recursive direction=left to bottom, arg=character typed, pos=2.5]{searching}{searching}
 	\umltrans[arg=ENTER pressed]{searching}{navigating}
 	\umltrans[arg=ENTER pressed/selected node clicked]{navigating}{previewing}
@@ -287,6 +288,15 @@ This section provides an overview of the various \emph{elements} of the graph vi
 \end{center}
 
 \subsubsection{Notes}\label{gelement:notes}
+
+\begin{center}
+\begin{tikzpicture}
+	\node at (0,0)[note](node1){1};
+	\node at (3,0)[note](node2){2};
+
+	\draw[arrow] (node1) -- node[arrow_letter,above] {j} (node2);
+\end{tikzpicture}
+\end{center}
 
 \subsubsection{Links}\label{gelement:links}
 
