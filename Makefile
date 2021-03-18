@@ -1,11 +1,11 @@
-CXXFLAGS:=$(shell pkg-config gtkmm-3.0 --cflags)
+CXXFLAGS:=$(shell pkg-config gtkmm-3.0 --cflags) -Isrc
 LDFLAGS:=$(shell pkg-config gtkmm-3.0 --libs)
 
 #############
 
 CC=g++
 EXECUTABLE=zettelkasten-gtk.out
-SRCS=main.cpp helloworld.cpp
+SRCS=$(shell find src/ -type f | grep -P '.+\.cpp$$')
 OBJS=$(patsubst %.cpp,%.o,$(SRCS))
 
 #############

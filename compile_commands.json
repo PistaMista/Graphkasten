@@ -41,14 +41,15 @@
       "-I/usr/include/gdkmm-3.0",
       "-I/usr/lib/gdkmm-3.0/include",
       "-pthread",
+      "-Isrc",
       "-c",
       "-o",
-      "main.o",
-      "main.cpp"
+      "src/main.o",
+      "src/main.cpp"
     ],
-    "directory": "/home/krystof/Documents/C++ Projects/Zettelkasten",
-    "file": "/home/krystof/Documents/C++ Projects/Zettelkasten/main.cpp",
-    "output": "/home/krystof/Documents/C++ Projects/Zettelkasten/main.o"
+    "directory": "/home/krystof/Documents/C++ Projects/Graphkasten",
+    "file": "/home/krystof/Documents/C++ Projects/Graphkasten/src/main.cpp",
+    "output": "/home/krystof/Documents/C++ Projects/Graphkasten/src/main.o"
   },
   {
     "arguments": [
@@ -92,13 +93,14 @@
       "-I/usr/include/gdkmm-3.0",
       "-I/usr/lib/gdkmm-3.0/include",
       "-pthread",
+      "-Isrc",
       "-c",
       "-o",
-      "helloworld.o",
-      "helloworld.cpp"
+      "src/helloworld.o",
+      "src/helloworld.cpp"
     ],
-    "directory": "/home/krystof/Documents/C++ Projects/Zettelkasten",
-    "file": "/home/krystof/Documents/C++ Projects/Zettelkasten/helloworld.cpp",
-    "output": "/home/krystof/Documents/C++ Projects/Zettelkasten/helloworld.o"
+    "directory": "/home/krystof/Documents/C++ Projects/Graphkasten",
+    "file": "/home/krystof/Documents/C++ Projects/Graphkasten/src/helloworld.cpp",
+    "output": "/home/krystof/Documents/C++ Projects/Graphkasten/src/helloworld.o"
   }
 ]
