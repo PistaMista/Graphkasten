@@ -10,12 +10,13 @@ OBJS=$(patsubst %.cpp,%.o,$(SRCS))
 
 #############
 
-all: $(EXECUTABLE)
-
 $(EXECUTABLE): $(OBJS)
 	$(CC) $(CXXFLAGS) $? $(LDFLAGS) -o $@
 
-install: all
+run: $(EXECUTABLE)
+	./$(EXECUTABLE)
+
+install: $(EXECUTABLE)
 	install $(EXECUTABLE) /usr/bin/$(patsubst %.out,%,$(EXECUTABLE))
 
 clean:
