@@ -115,7 +115,7 @@ Apart from the aforementioned main use cases, there will also be the following f
 
 \newpage
 
-\subsection{Common scenarios} % TODO Add pictures to scenarios
+\subsection{Common scenarios}
 
 Here are a few scenarios of how using the application might play out.
 
@@ -289,20 +289,26 @@ This section provides an overview of the various \emph{elements} of the graph vi
 
 \subsubsection{Notes}\label{gelement:notes}
 
-\begin{center}
-\begin{tikzpicture}
-	\node at (0,0)[note](node1){1};
-	\node at (3,0)[note](node2){2};
+Each node corresponds to one file in the Zettelkasten folder. The note file determines the title (\verb|%title|), the links and the tags (\verb|%tags|).
 
-	\draw[arrow] (node1) -- node[arrow_letter,above] {j} (node2);
-\end{tikzpicture}
+\begin{center}
+	\begin{tikzpicture}
+		\node at (0,0)[note]{1};
+	\end{tikzpicture}
 \end{center}
 
 \subsubsection{Links}\label{gelement:links}
 
+Each note file will have the links to other notes extracted from it and the links will be displayed in the graph.
+
+
 \subsubsection{Outlines}\label{gelement:outlines}
 
+Outlines group notes together -- by tag or by staging tasks. The staging note and all its staging subnotes will be outlined.
+
 \subsubsection{Lenses}\label{gelement:lenses}
+
+TBD
 
 \newpage
 
