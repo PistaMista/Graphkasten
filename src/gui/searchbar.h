@@ -5,6 +5,7 @@
 #include <gtkmm/box.h>
 #include <gtkmm/button.h>
 #include <gtkmm/popover.h>
+#include "options.h"
 
 class Searchbar : public Gtk::Box {
 	public:
@@ -13,8 +14,10 @@ class Searchbar : public Gtk::Box {
 
 	protected:
 		Gtk::SearchEntry m_searchbox;
-		Gtk::Button m_options;
+
+		Gtk::Button m_options_button;
 		Gtk::Popover m_options_popover;
+		Options m_options;
 
 	private:
 		void options_on_click();
