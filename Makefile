@@ -1,4 +1,4 @@
-CXXFLAGS:=$(shell pkg-config gtkmm-3.0 --cflags) -Isrc
+CXXFLAGS:=$(shell pkg-config gtkmm-3.0 --cflags) -Isrc -g -Wall
 LDFLAGS:=$(shell pkg-config gtkmm-3.0 --libs)
 
 #############
@@ -11,10 +11,13 @@ OBJS=$(patsubst %.cpp,%.o,$(SRCS))
 #############
 
 $(EXECUTABLE): $(OBJS)
-	$(CC) $(CXXFLAGS) $? $(LDFLAGS) -o $@
+	$(CC) $(CXXFLAGS) $^ $(LDFLAGS) -o $@
 
 run: $(EXECUTABLE)
 	./$(EXECUTABLE)
+
+debug: $(EXECUTABLE)
+	gdb -tui $(EXECUTABLE)
 
 install: $(EXECUTABLE)
 	install $(EXECUTABLE) /usr/bin/$(patsubst %.out,%,$(EXECUTABLE))
