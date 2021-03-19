@@ -1,12 +1,10 @@
-#include "helloworld.h"
+#include "graphkasten.h"
 #include <gtkmm/application.h>
-
 
 int main(int argc, char **argv)
 {
-	auto app = Gtk::Application::create(argc, argv, "org.gtkmm.example");
+	auto app = Gtk::Application::create(argc, argv, "org.graphkasten");
 
-	HelloWorld helloworld;
-	
-	return app->run(helloworld);
+	Graphkasten graphkasten;
+	return app->run(graphkasten);
 }
