@@ -1,8 +1,8 @@
 #ifndef GK_GRAPHKASTEN_H
 #define GK_GRAPHKASTEN_H
 
-#include "searchbar.h"
-#include "graphview.h"
+#include "gui/searchbar.h"
+#include "gui/graphview.h"
 
 #include <gtkmm/window.h>
 #include <gtkmm/grid.h>
