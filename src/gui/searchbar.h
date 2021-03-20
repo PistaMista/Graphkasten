@@ -10,7 +10,6 @@
 class Searchbar : public Gtk::Box {
 	public:
 		Searchbar();
-		~Searchbar();
 
 	protected:
 		Gtk::SearchEntry m_searchbox;

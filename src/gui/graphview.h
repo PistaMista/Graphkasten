@@ -6,7 +6,6 @@
 class Graphview : public Gtk::DrawingArea {
 	public:
 		Graphview();
-		~Graphview();
 
 	protected:
 		bool on_draw(const Cairo::RefPtr<Cairo::Context>& cr) override;

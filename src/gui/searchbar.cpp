@@ -21,10 +21,6 @@ Searchbar::Searchbar()
 	show_all_children();
 }
 
-Searchbar::~Searchbar() {
-
-}
-
 void Searchbar::options_on_click() {
 	m_options_popover.popup();
 }

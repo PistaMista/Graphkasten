@@ -5,16 +5,10 @@
 Graphview::Graphview() {
 }
 
-Graphview::~Graphview() {
-
-}
-
 bool Graphview::on_draw(const Cairo::RefPtr<Cairo::Context>& cr) {
 	Gtk::Allocation allocation = get_allocation();
 	const int width = allocation.get_width();
 	const int height = allocation.get_height();
-
-	std::cout << width << " " << height << std::endl;
 
 	// coordinates for the center of the window
 	int xc, yc;

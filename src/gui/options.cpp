@@ -13,7 +13,3 @@ Options::Options() : m_filechooser("Set folder...") {
 	show_all_children();
 	show();
 }
-
-Options::~Options() {
-
-}

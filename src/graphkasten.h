@@ -10,7 +10,6 @@
 class Graphkasten : public Gtk::Window {
 	public:
 		Graphkasten();
-		~Graphkasten();
 
 	protected:
 		Gtk::Grid m_grid;

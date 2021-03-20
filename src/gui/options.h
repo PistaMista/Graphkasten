@@ -7,7 +7,6 @@
 class Options : public Gtk::Box { 
 	public:
 		Options();
-		~Options();
 
 	protected:
 		Gtk::FileChooserButton m_filechooser;

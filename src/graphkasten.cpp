@@ -15,7 +15,3 @@ Graphkasten::Graphkasten() {
 	m_grid.show_all_children();
 	m_grid.show();
 }
-
-Graphkasten::~Graphkasten() {
-
-}
