@@ -3,14 +3,16 @@
 
 #include <gtkmm/drawingarea.h>
 
-namespace GUI {
-class Graphview : public Gtk::DrawingArea {
-	public:
-		Graphview();
+namespace GUI
+{
+class Graphview : public Gtk::DrawingArea
+{
+  public:
+	Graphview();
 
-	protected:
-		bool on_draw(const Cairo::RefPtr<Cairo::Context>& cr) override;
+  protected:
+	bool on_draw(const Cairo::RefPtr<Cairo::Context> &cr) override;
 };
-}
+} // namespace GUI
 
 #endif

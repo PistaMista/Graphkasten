@@ -1,28 +1,29 @@
 #ifndef GK_SEARCHBAR_H
 #define GK_SEARCHBAR_H
 
-#include <gtkmm/searchentry.h>
+#include "options.h"
 #include <gtkmm/box.h>
 #include <gtkmm/button.h>
 #include <gtkmm/popover.h>
-#include "options.h"
+#include <gtkmm/searchentry.h>
 
-namespace GUI {
-class Searchbar : public Gtk::Box {
-	public:
-		Searchbar();
+namespace GUI
+{
+class Searchbar : public Gtk::Box
+{
+  public:
+	Searchbar();
 
-	protected:
-		Gtk::SearchEntry m_searchbox;
+  protected:
+	Gtk::SearchEntry m_searchbox;
 
-		Gtk::Button m_options_button;
-		Gtk::Popover m_options_popover;
-		Options m_options;
+	Gtk::Button m_options_button;
+	Gtk::Popover m_options_popover;
+	Options m_options;
 
-	private:
-		void options_on_click();
-
+  private:
+	void options_on_click();
 };
-}
+} // namespace GUI
 
 #endif
