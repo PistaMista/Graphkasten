@@ -1,13 +1,12 @@
 #include "searchbar.h"
 #include "gtkmm/box.h"
-#include <gtkmm/icontheme.h>
 #include <gdkmm/rgba.h>
+#include <gtkmm/icontheme.h>
 #include <iostream>
 
 
-Searchbar::Searchbar() 
-: m_options_button("Options"),
-  m_options_popover(m_options_button) {
+GUI::Searchbar::Searchbar() : m_options_button("Options"), m_options_popover(m_options_button)
+{
 	// Add the searchbox, allowing it to stretch
 	pack_start(m_searchbox, Gtk::PACK_EXPAND_WIDGET, 20);
 	m_searchbox.set_max_width_chars(999999);
@@ -21,6 +20,7 @@ Searchbar::Searchbar()
 	show_all_children();
 }
 
-void Searchbar::options_on_click() {
+void GUI::Searchbar::options_on_click()
+{
 	m_options_popover.popup();
 }

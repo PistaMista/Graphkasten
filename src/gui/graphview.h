@@ -3,6 +3,7 @@
 
 #include <gtkmm/drawingarea.h>
 
+namespace GUI {
 class Graphview : public Gtk::DrawingArea {
 	public:
 		Graphview();
@@ -10,5 +11,6 @@ class Graphview : public Gtk::DrawingArea {
 	protected:
 		bool on_draw(const Cairo::RefPtr<Cairo::Context>& cr) override;
 };
+}
 
 #endif

@@ -1,6 +1,7 @@
 #include "graphkasten.h"
 
-Graphkasten::Graphkasten() {
+Graphkasten::Graphkasten()
+{
 	set_title("Graphkasten");
 	set_border_width(10);
 	set_default_geometry(300, 200);

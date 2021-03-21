@@ -4,6 +4,7 @@
 #include <gtkmm/box.h>
 #include <gtkmm/filechooserbutton.h>
 
+namespace GUI {
 class Options : public Gtk::Box { 
 	public:
 		Options();
@@ -11,5 +12,6 @@ class Options : public Gtk::Box {
 	protected:
 		Gtk::FileChooserButton m_filechooser;
 };
+}
 
 #endif

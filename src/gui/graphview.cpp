@@ -2,10 +2,12 @@
 #include <gdkmm/rgba.h>
 #include <iostream>
 
-Graphview::Graphview() {
+GUI::Graphview::Graphview()
+{
 }
 
-bool Graphview::on_draw(const Cairo::RefPtr<Cairo::Context>& cr) {
+bool GUI::Graphview::on_draw(const Cairo::RefPtr<Cairo::Context> &cr)
+{
 	Gtk::Allocation allocation = get_allocation();
 	const int width = allocation.get_width();
 	const int height = allocation.get_height();
@@ -15,7 +17,7 @@ bool Graphview::on_draw(const Cairo::RefPtr<Cairo::Context>& cr) {
 	xc = width / 2;
 	yc = height / 2;
 
-	cr->set_source_rgba(1, 1, 1, 0.9);   // green
+	cr->set_source_rgba(1, 1, 1, 0.9); // green
 	cr->paint();
 	cr->restore();
 	cr->save();

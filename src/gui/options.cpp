@@ -1,14 +1,12 @@
 #include "options.h"
 #include <gtkmm/filefilter.h>
+#include <gtkmm/label.h>
 
-Options::Options() : m_filechooser("Set folder...") {
+GUI::Options::Options() : m_filechooser("Set folder...")
+{
 	pack_start(m_filechooser);
-	auto filter = Gtk::FileFilter::create();
+	m_filechooser.set_action(Gtk::FILE_CHOOSER_ACTION_SELECT_FOLDER);
 
-	filter->set_name("Directories");
-	filter->add_mime_type("inode/directory");
-
-	m_filechooser.set_filter(filter);
 
 	show_all_children();
 	show();

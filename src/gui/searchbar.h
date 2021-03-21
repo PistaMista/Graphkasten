@@ -7,6 +7,7 @@
 #include <gtkmm/popover.h>
 #include "options.h"
 
+namespace GUI {
 class Searchbar : public Gtk::Box {
 	public:
 		Searchbar();
@@ -22,5 +23,6 @@ class Searchbar : public Gtk::Box {
 		void options_on_click();
 
 };
+}
 
 #endif

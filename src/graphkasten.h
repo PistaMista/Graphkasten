@@ -14,8 +14,8 @@ class Graphkasten : public Gtk::Window {
 	protected:
 		Gtk::Grid m_grid;
 
-		Searchbar m_searchbar;
-		Graphview m_graphview;
+		GUI::Searchbar m_searchbar;
+		GUI::Graphview m_graphview;
 };
 
 #endif
