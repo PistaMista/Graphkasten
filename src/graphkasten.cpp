@@ -2,6 +2,10 @@
 
 Graphkasten::Graphkasten()
 {
+	// Initialize the graph model
+	m_graph = new GraphModel::Graph("/home/krystof/Wikis/zettel/text");
+
+	// Initialize the UI
 	set_title("Graphkasten");
 	set_border_width(10);
 	set_default_geometry(300, 200);
@@ -15,4 +19,9 @@ Graphkasten::Graphkasten()
 
 	m_grid.show_all_children();
 	m_grid.show();
+}
+
+Graphkasten::~Graphkasten()
+{
+	delete m_graph;
 }
