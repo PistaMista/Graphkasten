@@ -1,4 +1,4 @@
-CXXFLAGS:=$(shell pkg-config gtkmm-3.0 --cflags) -Isrc -g -Wall
+CXXFLAGS:=$(shell pkg-config gtkmm-3.0 --cflags) -Isrc -g -Wall -std=c++20
 LDFLAGS:=$(shell pkg-config gtkmm-3.0 --libs)
 
 #############
