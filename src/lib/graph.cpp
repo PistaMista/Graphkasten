@@ -10,10 +10,10 @@ GraphModel::Graph::Graph(std::string folder_path)
 	{
 		std::string path = file.path();
 
-		if ( path.ends_with(".wiki") )
+		if ( path.ends_with(".wiki") && file.is_regular_file() )
 		{
 			Node node = Node(path);
-			m_nodemap.insert(std::pair<std::string, Node>{node.m_filename, node});
+			m_nodemap.insert(std::pair<std::string, Node>{node.getFilename(), node});
 		}
 	}
 
