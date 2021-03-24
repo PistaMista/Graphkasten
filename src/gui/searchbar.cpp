@@ -1,7 +1,6 @@
 #include "searchbar.h"
 #include "gtkmm/box.h"
 #include <gdkmm/rgba.h>
-#include <gtkmm/icontheme.h>
 #include <iostream>
 
 

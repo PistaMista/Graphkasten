@@ -6,13 +6,14 @@
 
 namespace GUI
 {
-class Options : public Gtk::Box
+class Options final : public Gtk::Box
 {
   public:
 	Options();
 
-  protected:
+  private:
 	Gtk::FileChooserButton m_filechooser;
+	void filechooser_on_confirm();
 };
 } // namespace GUI
 

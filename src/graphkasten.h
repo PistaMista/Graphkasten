@@ -11,10 +11,22 @@
 class Graphkasten final : public Gtk::Window
 {
   public:
+	static Graphkasten &getInstance()
+	{
+		static Graphkasten instance;
+		return instance;
+	};
+
+	Graphkasten(Graphkasten const &) = delete;
+	void operator=(Graphkasten const &) = delete;
+
+	void ReloadGraphModel(std::string folder_path);
+
+  private:
 	Graphkasten();
 	~Graphkasten();
 
-  private:
+
 	Gtk::Grid m_grid;
 
 	GUI::Searchbar m_searchbar;

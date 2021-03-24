@@ -3,7 +3,7 @@
 Graphkasten::Graphkasten()
 {
 	// Initialize the graph model
-	m_graph = new GraphModel::Graph("/home/krystof/Wikis/zettel/text");
+	ReloadGraphModel("/home/krystof/Wikis/zettel/text/");
 
 	// Initialize the UI
 	set_title("Graphkasten");
@@ -23,5 +23,14 @@ Graphkasten::Graphkasten()
 
 Graphkasten::~Graphkasten()
 {
-	delete m_graph;
+	if ( m_graph != nullptr )
+		delete m_graph;
+}
+
+void Graphkasten::ReloadGraphModel(std::string folder_path)
+{
+	if ( m_graph != nullptr )
+		delete m_graph;
+
+	m_graph = new GraphModel::Graph(folder_path);
 }
