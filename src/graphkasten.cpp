@@ -1,4 +1,5 @@
 #include "graphkasten.h"
+#include <filesystem>
 
 Graphkasten::Graphkasten()
 {
@@ -23,14 +24,14 @@ Graphkasten::Graphkasten()
 
 Graphkasten::~Graphkasten()
 {
-	if ( m_graph != nullptr )
-		delete m_graph;
+	delete m_graph;
 }
 
 void Graphkasten::ReloadGraphModel(std::string folder_path)
 {
-	if ( m_graph != nullptr )
+	if ( std::filesystem::is_directory(folder_path) )
+	{
 		delete m_graph;
-
-	m_graph = new GraphModel::Graph(folder_path);
+		m_graph = new GraphModel::Graph(folder_path);
+	}
 }
