@@ -13,9 +13,15 @@ class Graph final
 {
   public:
 	/**
-     * @param folder_path The folder of wiki files to convert into a graph model.
-     */
+       * @param folder_path The folder of wiki files to convert into a graph model.
+       */
 	Graph(std::string folder_path);
+
+	/**
+       * @brief Gets all the nodes in the graph.
+       * @return All the nodes in the graph.
+       */
+	std::vector<Node *> GetNodes();
 
   private:
 	/**
