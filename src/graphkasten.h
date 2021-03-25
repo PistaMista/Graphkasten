@@ -8,6 +8,9 @@
 #include <gtkmm/grid.h>
 #include <gtkmm/window.h>
 
+/**
+ * @brief The main application window.
+ */
 class Graphkasten final : public Gtk::Window
 {
   public:
