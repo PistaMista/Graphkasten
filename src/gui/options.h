@@ -6,6 +6,9 @@
 
 namespace GUI
 {
+/**
+ * @brief The options menu.
+ */
 class Options final : public Gtk::Box
 {
   public:

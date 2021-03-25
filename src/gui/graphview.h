@@ -5,6 +5,9 @@
 
 namespace GUI
 {
+/**
+ * @brief The viewport that displays the wiki graph.
+ */
 class Graphview : public Gtk::DrawingArea
 {
   public:

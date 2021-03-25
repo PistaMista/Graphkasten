@@ -24,14 +24,14 @@ Graphkasten::Graphkasten()
 
 Graphkasten::~Graphkasten()
 {
-	delete m_graph;
+	delete m_graphmodel;
 }
 
 void Graphkasten::ReloadGraphModel(std::string folder_path)
 {
 	if ( std::filesystem::is_directory(folder_path) )
 	{
-		delete m_graph;
-		m_graph = new GraphModel::Graph(folder_path);
+		delete m_graphmodel;
+		m_graphmodel = new GraphModel::Graph(folder_path);
 	}
 }

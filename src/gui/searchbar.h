@@ -9,6 +9,9 @@
 
 namespace GUI
 {
+/**
+ * @brief Field for searching the wiki graph.
+ */
 class Searchbar : public Gtk::Box
 {
   public:
