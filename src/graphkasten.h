@@ -1,7 +1,7 @@
 #ifndef GK_GRAPHKASTEN_H
 #define GK_GRAPHKASTEN_H
 
-#include "gui/graphview.h"
+#include "gui/graphview/graphview.h"
 #include "gui/searchbar.h"
 #include "lib/graph.h"
 
@@ -48,7 +48,7 @@ class Graphkasten final : public Gtk::Window
 	Gtk::Grid m_grid;
 
 	GUI::Searchbar m_searchbar;
-	GUI::Graphview m_graphview;
+	GUI::Graphview::Graphview m_graphview;
 
 	/**
 	 * @brief The currently loaded note graph model.

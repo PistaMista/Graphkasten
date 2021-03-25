@@ -3,7 +3,7 @@
 
 #include <gtkmm/drawingarea.h>
 
-namespace GUI
+namespace GUI::Graphview
 {
 /**
  * @brief The viewport that displays the wiki graph.
@@ -16,6 +16,6 @@ class Graphview : public Gtk::DrawingArea
   protected:
 	bool on_draw(const Cairo::RefPtr<Cairo::Context> &cr) override;
 };
-} // namespace GUI
+} // namespace GUI::Graphview
 
 #endif

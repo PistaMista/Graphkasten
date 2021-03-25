@@ -2,11 +2,11 @@
 #include <gdkmm/rgba.h>
 #include <iostream>
 
-GUI::Graphview::Graphview()
+GUI::Graphview::Graphview::Graphview()
 {
 }
 
-bool GUI::Graphview::on_draw(const Cairo::RefPtr<Cairo::Context> &cr)
+bool GUI::Graphview::Graphview::on_draw(const Cairo::RefPtr<Cairo::Context> &cr)
 {
 	Gtk::Allocation allocation = get_allocation();
 	const int width = allocation.get_width();
