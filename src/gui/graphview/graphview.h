@@ -15,6 +15,7 @@ class Graphview : public Gtk::DrawingArea
 
   protected:
 	bool on_draw(const Cairo::RefPtr<Cairo::Context> &cr) override;
+	bool OnClick(GdkEventButton *event);
 };
 } // namespace GUI::Graphview
 

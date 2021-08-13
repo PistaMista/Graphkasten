@@ -330,3 +330,6 @@ tags
 
 # Doxygen documentation
 doxydocs
+
+# VS Code settings
+.vscode
